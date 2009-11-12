@@ -137,7 +137,7 @@ namespace TaskManagerProj
                 if (p1.ProcessName != "TaskManagerProj.vshost")
                 {
                     //Create instance of Process class
-                    if (p1.Id.ToString() == listView1.SelectedItems[0].Name)
+                    if (p1.Id.ToString() == listView1.SelectedItems[0].SubItems)
                     {
                         p1.Kill();
                         break;
