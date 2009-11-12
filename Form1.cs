@@ -16,7 +16,7 @@ namespace TaskManagerProj
     {
 
         private ListViewColumnSorter lvwColumnSorter;
-        private ListViewItem List;
+        private ListViewItem selectedItem;
 
         delegate void RefreshListView();
 
@@ -61,7 +61,7 @@ namespace TaskManagerProj
                     Proc1.MemoryUsage = p1.WorkingSet64.ToString();
 
                     //Add values to List Item
-                    List = new ListViewItem(Proc1.ProcessID.ToString());
+                    ListViewItem List = new ListViewItem(Proc1.ProcessID.ToString());
                     
                     List.SubItems.Add(Proc1.ProcessName);
                     List.SubItems.Add(String.Format("{0:0,0}",Int64.Parse(Proc1.MemoryUsage.ToString())/1000)+"K");
@@ -115,7 +115,7 @@ namespace TaskManagerProj
             System.Timers.Timer timer1 = new System.Timers.Timer(1000);
 
             timer1.Elapsed += new ElapsedEventHandler(timer1_Elapsed);
-            timer1.Interval = 4000;
+            timer1.Interval = 40000000;
 
             timer1.Enabled = true;
             timer1.Start();
@@ -130,7 +130,28 @@ namespace TaskManagerProj
 
         private void killButton_Click(object sender, EventArgs e)
         {
-            List.SubItems.
+            clsProcess Proc1;
+
+            Process[] templist = Process.GetProcesses();
+
+            foreach (Process p1 in templist)
+            {
+                if (p1.ProcessName != "TaskManagerProj.vshost")
+                {
+                    //Create instance of Process class
+                    Proc1 = new clsProcess();
+                    if (p1.Id.ToString() == listView1.SelectedItems[0].Name.ToString())
+                    {
+                        p1.Kill();
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            selectedItem = listView1.SelectedItems[0];
         }
 
     }
