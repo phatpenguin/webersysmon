@@ -115,9 +115,9 @@ namespace TaskManagerProj
             System.Timers.Timer timer1 = new System.Timers.Timer(1000);
 
             timer1.Elapsed += new ElapsedEventHandler(timer1_Elapsed);
-            timer1.Interval = 40000000;
+            timer1.Interval = 4000;
 
-            timer1.Enabled = true;
+            timer1.Enabled = false;
             timer1.Start();
         }
 
@@ -130,8 +130,6 @@ namespace TaskManagerProj
 
         private void killButton_Click(object sender, EventArgs e)
         {
-            clsProcess Proc1;
-
             Process[] templist = Process.GetProcesses();
 
             foreach (Process p1 in templist)
@@ -139,8 +137,7 @@ namespace TaskManagerProj
                 if (p1.ProcessName != "TaskManagerProj.vshost")
                 {
                     //Create instance of Process class
-                    Proc1 = new clsProcess();
-                    if (p1.Id.ToString() == listView1.SelectedItems[0].Name.ToString())
+                    if (p1.Id.ToString() == listView1.SelectedItems[0].Name)
                     {
                         p1.Kill();
                         break;
