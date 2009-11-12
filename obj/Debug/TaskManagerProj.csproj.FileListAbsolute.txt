@@ -1,0 +1,32 @@
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\bin\Debug\TaskManagerProj.exe
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\bin\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\TaskManagerProj.Form1.resources
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\TaskManagerProj.Properties.Resources.resources
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\TaskManagerProj.exe
+C:\Documents and Settings\danh\Local Settings\Application Data\Temporary Projects\TaskManagerProj\obj\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\TaskManagerProj.exe
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\bin\Debug\TaskManagerProj.exe
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\bin\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\TaskManagerProj.Form1.resources
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\TaskManagerProj.Properties.Resources.resources
+C:\Documents and Settings\danh\My Documents\Weber\2009 Fall Semester\CS 3100\Projects\TaskManagerProj\TaskManagerProj\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\TaskManagerProj.exe
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\bin\Debug\TaskManagerProj.exe
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\bin\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\TaskManagerProj.Form1.resources
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\TaskManagerProj.Properties.Resources.resources
+C:\Documents and Settings\leonards\Desktop\tm\TaskManagerProj\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.exe
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\bin\Debug\TaskManagerProj.exe
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\bin\Debug\TaskManagerProj.pdb
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.Form1.resources
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.Properties.Resources.resources
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
