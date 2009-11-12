@@ -33,7 +33,7 @@
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.killButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,21 +95,22 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // killButton
             // 
-            this.button2.Location = new System.Drawing.Point(0, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.killButton.Location = new System.Drawing.Point(0, 383);
+            this.killButton.Name = "killButton";
+            this.killButton.Size = new System.Drawing.Size(108, 23);
+            this.killButton.TabIndex = 3;
+            this.killButton.Text = "KILL";
+            this.killButton.UseVisualStyleBackColor = true;
+            this.killButton.Click += new System.EventHandler(this.killButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 406);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.killButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -131,7 +132,7 @@
         private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button killButton;
     }
 }
 

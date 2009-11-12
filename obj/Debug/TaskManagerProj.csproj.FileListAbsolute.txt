@@ -30,3 +30,5 @@ C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskMana
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.Form1.resources
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.Properties.Resources.resources
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\wtm\TaskManagerProj\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonitor\obj\Debug\TaskManagerProj.exe
+C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonitor\obj\Debug\TaskManagerProj.pdb

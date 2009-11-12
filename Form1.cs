@@ -16,6 +16,7 @@ namespace TaskManagerProj
     {
 
         private ListViewColumnSorter lvwColumnSorter;
+        private ListViewItem List;
 
         delegate void RefreshListView();
 
@@ -60,7 +61,7 @@ namespace TaskManagerProj
                     Proc1.MemoryUsage = p1.WorkingSet64.ToString();
 
                     //Add values to List Item
-                    ListViewItem List = new ListViewItem(Proc1.ProcessID.ToString());
+                    List = new ListViewItem(Proc1.ProcessID.ToString());
                     
                     List.SubItems.Add(Proc1.ProcessName);
                     List.SubItems.Add(String.Format("{0:0,0}",Int64.Parse(Proc1.MemoryUsage.ToString())/1000)+"K");
@@ -127,7 +128,10 @@ namespace TaskManagerProj
 
         }
 
-
+        private void killButton_Click(object sender, EventArgs e)
+        {
+            List.SubItems.
+        }
 
     }
 }
