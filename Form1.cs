@@ -36,7 +36,7 @@ namespace TaskManagerProj
             listView1.Columns.Add("ProcessID", 80, HorizontalAlignment.Left);
             listView1.Columns.Add("Image Name", 150, HorizontalAlignment.Left);
             listView1.Columns.Add("Memory Usage", 120,HorizontalAlignment.Right);
-
+            listView1.Columns.Add("ThreadPriority", 100, HorizontalAlignment.Center);
             n1 = new Thread(new ThreadStart(IntervalRefresh));
             n1.Start();
         }
@@ -60,11 +60,15 @@ namespace TaskManagerProj
                     Proc1.ProcessID = p1.Id;
                     Proc1.MemoryUsage = p1.WorkingSet64.ToString();
 
+                    // Added by Tenzin
+                    Proc1.Thread_Priority = p1.BasePriority;
+
                     //Add values to List Item
                     ListViewItem List = new ListViewItem(Proc1.ProcessID.ToString());
                     
                     List.SubItems.Add(Proc1.ProcessName);
                     List.SubItems.Add(String.Format("{0:0,0}",Int64.Parse(Proc1.MemoryUsage.ToString())/1000)+"K");
+                    List.SubItems.Add(Proc1.Thread_Priority.ToString());
 
                     listView1.Items.Add(List);
                 }

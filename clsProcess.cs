@@ -15,6 +15,8 @@ namespace TaskManagerProj
 
         private string strMemoryUsage;
 
+        private int threadPriority;
+
         public string ProcessName
         {
             get { return strProcessName; }
@@ -43,6 +45,19 @@ namespace TaskManagerProj
         {
             return strProcessName;
         }
+
+         // Process Thread priority information
+         public int Thread_Priority
+         {
+            get
+            {
+               return threadPriority;
+            }
+            set
+            {
+               threadPriority = value;
+            }
+         }
 
     }
 }
