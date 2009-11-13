@@ -9,12 +9,12 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Timers;
+using System.Collections;
 
 namespace TaskManagerProj
 {
     public partial class Form1 : Form
     {
-
         private ListViewColumnSorter lvwColumnSorter;
         private ListViewItem selectedItem;
 
@@ -25,9 +25,7 @@ namespace TaskManagerProj
         public Form1()
         {
             InitializeComponent();
-
             lvwColumnSorter = new ListViewColumnSorter();
-
             listView1.ListViewItemSorter = lvwColumnSorter;
         }
 
@@ -127,9 +125,7 @@ namespace TaskManagerProj
 
         void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-
-            listView1.BeginInvoke(new RefreshListView(RefreshProcesses));
-
+            //listView1.BeginInvoke(new RefreshListView(RefreshProcesses));
         }
 
         private void killButton_Click(object sender, EventArgs e)
@@ -141,19 +137,41 @@ namespace TaskManagerProj
                 if (p1.ProcessName != "TaskManagerProj.vshost")
                 {
                     //Create instance of Process class
-                    if (p1.Id.ToString() == listView1.SelectedItems[0].SubItems)
+                    if (p1.Id.ToString().Equals(listView1.SelectedItems[0].Text))
                     {
                         p1.Kill();
+                        //MessageBox.Show(p1.Id.ToString());
                         break;
                     }
                 }
             }
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e)
+        private void KillPid(String myPid)
         {
-            selectedItem = listView1.SelectedItems[0];
+            Process[] templist = Process.GetProcesses();
+
+            foreach (Process p1 in templist)
+            {
+                if (p1.ProcessName != "TaskManagerProj.vshost")
+                {
+                    //Create instance of Process class
+                    if (p1.Id.ToString().Equals(myPid))
+                    {
+                        p1.Kill();
+                        //MessageBox.Show(p1.Id.ToString());
+                        break;
+                    }
+                }
+            }
         }
 
+        private void EnterKeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                KillPid(killProcessTextBox.Text);
+            }
+        }
     }
 }
