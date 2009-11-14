@@ -125,7 +125,7 @@ namespace TaskManagerProj
 
         void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-            //listView1.BeginInvoke(new RefreshListView(RefreshProcesses));
+            listView1.BeginInvoke(new RefreshListView(RefreshProcesses));
         }
 
         private void killButton_Click(object sender, EventArgs e)
