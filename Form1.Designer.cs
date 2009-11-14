@@ -49,7 +49,6 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 27);
             this.listView1.MultiSelect = false;
@@ -62,6 +61,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(404, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
@@ -72,6 +72,7 @@
             // 
             // killButton
             // 
+            this.killButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.killButton.Location = new System.Drawing.Point(0, 383);
             this.killButton.Name = "killButton";
             this.killButton.Size = new System.Drawing.Size(108, 23);
@@ -126,7 +127,7 @@
             this.killSelectedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.killProcessTextBox});
             this.killSelectedToolStripMenuItem.Name = "killSelectedToolStripMenuItem";
-            this.killSelectedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.killSelectedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.killSelectedToolStripMenuItem.Text = "Kill Process";
             // 
             // killProcessTextBox
@@ -140,7 +141,7 @@
             this.newProcessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.newProcessToolStripMenuItem.Name = "newProcessToolStripMenuItem";
-            this.newProcessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newProcessToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newProcessToolStripMenuItem.Text = "New Process";
             // 
             // toolStripTextBox1

@@ -16,7 +16,6 @@ namespace TaskManagerProj
     public partial class Form1 : Form
     {
         private ListViewColumnSorter lvwColumnSorter;
-        private ListViewItem selectedItem;
 
         delegate void RefreshListView();
 
@@ -46,6 +45,9 @@ namespace TaskManagerProj
             Process[] templist = Process.GetProcesses();
 
             //Create items in list view
+            String selectedPid = "";
+            if (listView1.SelectedItems.Count >= 1)
+            selectedPid = listView1.SelectedItems[0].Text;
             listView1.Items.Clear();
 
             foreach (Process p1 in templist)
@@ -69,11 +71,13 @@ namespace TaskManagerProj
                     List.SubItems.Add(Proc1.Thread_Priority.ToString());
 
                     listView1.Items.Add(List);
+
+                    if (!selectedPid.Equals("") && p1.Id.ToString().Equals(selectedPid))
+                    {
+                        listView1.Items[(listView1.Items.Count - 1)].Selected = true;
+                    }
                 }
             }
-
-            //listView1.Refresh();
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,10 +118,10 @@ namespace TaskManagerProj
 
         private void IntervalRefresh()
         {
-            System.Timers.Timer timer1 = new System.Timers.Timer(1000);
+            System.Timers.Timer timer1 = new System.Timers.Timer(500);
 
             timer1.Elapsed += new ElapsedEventHandler(timer1_Elapsed);
-            timer1.Interval = 4000;
+            timer1.Interval = 1000;
 
             timer1.Enabled = false;
             timer1.Start();
@@ -140,7 +144,7 @@ namespace TaskManagerProj
                     if (p1.Id.ToString().Equals(listView1.SelectedItems[0].Text))
                     {
                         p1.Kill();
-                        //MessageBox.Show(p1.Id.ToString());
+                        RefreshProcesses();
                         break;
                     }
                 }
@@ -159,7 +163,7 @@ namespace TaskManagerProj
                     if (p1.Id.ToString().Equals(myPid))
                     {
                         p1.Kill();
-                        //MessageBox.Show(p1.Id.ToString());
+                        RefreshProcesses();
                         break;
                     }
                 }
