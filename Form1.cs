@@ -31,9 +31,12 @@ namespace TaskManagerProj
         private void Form1_Load(object sender, EventArgs e)
         {
             listView1.Columns.Add("ProcessID", 80, HorizontalAlignment.Left);
-            listView1.Columns.Add("Image Name", 150, HorizontalAlignment.Left);
-            listView1.Columns.Add("Memory Usage", 120,HorizontalAlignment.Right);
-            listView1.Columns.Add("ThreadPriority", 100, HorizontalAlignment.Center);
+            listView1.Columns.Add("Image Name", 120, HorizontalAlignment.Left);
+            listView1.Columns.Add("Memory Usage", 100,HorizontalAlignment.Right);
+            listView1.Columns.Add("CPU", 80, HorizontalAlignment.Center);
+            listView1.Columns.Add("Start Time", 80, HorizontalAlignment.Center);
+            listView1.Columns.Add("Thread Count", 80, HorizontalAlignment.Center);
+            listView1.Columns.Add("ThreadPriority", 80, HorizontalAlignment.Center);
             n1 = new Thread(new ThreadStart(IntervalRefresh));
             n1.Start();
         }
@@ -41,6 +44,12 @@ namespace TaskManagerProj
         private void RefreshProcesses()
         {
             clsProcess Proc1;
+
+            // variable used to add-up all the processes
+            int totalRunningProcesses = 0;
+
+            // variable used to add-up all Thread count
+            int totalThreadCount = 0;
 
             Process[] templist = Process.GetProcesses();
 
@@ -54,23 +63,38 @@ namespace TaskManagerProj
             {
                 if (p1.ProcessName != "TaskManagerProj.vshost")
                 {
-                   //Create instance of Process class
-                    Proc1 = new clsProcess();
-                    Proc1.ProcessName = p1.ProcessName.ToString();
-                    Proc1.ProcessID = p1.Id;
-                    Proc1.MemoryUsage = p1.WorkingSet64.ToString();
+                    try
+                    {
+                        //Create instance of Process class
+                        Proc1 = new clsProcess();
+                        Proc1.ProcessName = p1.ProcessName.ToString();
+                        Proc1.ProcessID = p1.Id;
+                        Proc1.MemoryUsage = p1.WorkingSet64.ToString();
 
-                    // Added by Tenzin
-                    Proc1.Thread_Priority = p1.BasePriority;
+                        // Added by Tenzin
+                        Proc1.Thread_Priority = p1.BasePriority;
+                        Proc1.StartTime = p1.StartTime.ToShortTimeString();
+                        Proc1.CpuTime = (p1.TotalProcessorTime.Duration().Hours.ToString() + ":" +
+                                          p1.TotalProcessorTime.Duration().Minutes.ToString() + ":" +
+                                          p1.TotalProcessorTime.Duration().Seconds.ToString());
+                        Proc1.ThreadCount = p1.Threads.Count.ToString();
 
-                    //Add values to List Item
-                    ListViewItem List = new ListViewItem(Proc1.ProcessID.ToString());
-                    
-                    List.SubItems.Add(Proc1.ProcessName);
-                    List.SubItems.Add(String.Format("{0:0,0}",Int64.Parse(Proc1.MemoryUsage.ToString())/1000)+"K");
-                    List.SubItems.Add(Proc1.Thread_Priority.ToString());
+                        //Add values to List Item
+                        ListViewItem List = new ListViewItem(Proc1.ProcessID.ToString());
 
-                    listView1.Items.Add(List);
+                        List.SubItems.Add(Proc1.ProcessName);
+                        List.SubItems.Add(String.Format("{0:0,0}", Int64.Parse(Proc1.MemoryUsage.ToString()) / 1000) + "K");
+                        List.SubItems.Add(Proc1.CpuTime); // add cputime
+                        List.SubItems.Add(Proc1.StartTime); // add starttime
+                        List.SubItems.Add(Proc1.ThreadCount); // add thread count
+                        List.SubItems.Add(Proc1.Thread_Priority.ToString());
+
+                        totalRunningProcesses++; // add up all the processes
+                        totalThreadCount += p1.Threads.Count; // add up all the threads from each process
+
+                        listView1.Items.Add(List);
+                    }
+                    catch { }
 
                     if (!selectedPid.Equals("") && p1.Id.ToString().Equals(selectedPid))
                     {
@@ -78,6 +102,11 @@ namespace TaskManagerProj
                     }
                 }
             }
+            // Display the total number of Processes currently running.
+            processLabel.Text = "Process: " + totalRunningProcesses.ToString();
+
+            // Display the total number of threads
+            threadLabel.Text = "Threads: " + totalThreadCount.ToString();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

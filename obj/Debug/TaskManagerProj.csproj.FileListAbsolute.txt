@@ -38,3 +38,11 @@ C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonito
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonitor\obj\Debug\TaskManagerProj.Form1.resources
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonitor\obj\Debug\TaskManagerProj.Properties.Resources.resources
 C:\Documents and Settings\leonards\My Documents\school\weber\CS3100\SystemMonitor\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache
+C:\Documents\FinalProject\obj\Debug\TaskManagerProj.exe
+C:\Documents\FinalProject\obj\Debug\TaskManagerProj.pdb
+C:\Documents\FinalProject\bin\Debug\TaskManagerProj.exe
+C:\Documents\FinalProject\bin\Debug\TaskManagerProj.pdb
+C:\Documents\FinalProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents\FinalProject\obj\Debug\TaskManagerProj.Form1.resources
+C:\Documents\FinalProject\obj\Debug\TaskManagerProj.Properties.Resources.resources
+C:\Documents\FinalProject\obj\Debug\TaskManagerProj.csproj.GenerateResource.Cache

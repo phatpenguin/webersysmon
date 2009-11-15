@@ -15,7 +15,9 @@ namespace TaskManagerProj
 
         private string strMemoryUsage;
 
-        private int threadPriority;
+        private int threadPriority; // thread priority for running threads
+
+       
 
         public string ProcessName
         {
@@ -46,18 +48,30 @@ namespace TaskManagerProj
             return strProcessName;
         }
 
-         // Process Thread priority information
+        // Holds and sets thread priority value for each process
          public int Thread_Priority
          {
-            get
-            {
-               return threadPriority;
-            }
-            set
-            {
-               threadPriority = value;
-            }
+             get
+             {
+                 return threadPriority;
+             }
+             set
+             {
+                 threadPriority = value;
+             }
          }
+
+        // auto-implemented starttime variable of type string.
+        // Holds and sets starttime value for each process
+         public string StartTime { get; set; }
+
+        // auto-implemented cputime variable of type string.
+        // Holds and sets cputime value for each process
+         public string CpuTime { get; set; }
+
+        // auto-implemented threadcount variable of type string.
+        // Holds and sets threadcount value for each process
+         public string ThreadCount { get; set; }
 
     }
 }
