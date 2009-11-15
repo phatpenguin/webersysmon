@@ -39,7 +39,9 @@
             this.killProcessTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.newProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.memUsePieBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memUsePieBox)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -53,7 +55,7 @@
             this.listView1.Location = new System.Drawing.Point(0, 27);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(525, 350);
+            this.listView1.Size = new System.Drawing.Size(525, 465);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -62,7 +64,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(404, 383);
+            this.button1.Location = new System.Drawing.Point(638, 498);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 2;
@@ -73,7 +75,7 @@
             // killButton
             // 
             this.killButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.killButton.Location = new System.Drawing.Point(0, 383);
+            this.killButton.Location = new System.Drawing.Point(0, 498);
             this.killButton.Name = "killButton";
             this.killButton.Size = new System.Drawing.Size(108, 23);
             this.killButton.TabIndex = 3;
@@ -109,7 +111,7 @@
             this.processToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(525, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(759, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,11 +151,22 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 21);
             // 
+            // memUsePieBox
+            // 
+            this.memUsePieBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.memUsePieBox.Location = new System.Drawing.Point(532, 27);
+            this.memUsePieBox.Name = "memUsePieBox";
+            this.memUsePieBox.Size = new System.Drawing.Size(225, 225);
+            this.memUsePieBox.TabIndex = 4;
+            this.memUsePieBox.TabStop = false;
+            this.memUsePieBox.Paint += new System.Windows.Forms.PaintEventHandler(this.memUsePieBox_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 406);
+            this.ClientSize = new System.Drawing.Size(759, 521);
+            this.Controls.Add(this.memUsePieBox);
             this.Controls.Add(this.killButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
@@ -164,6 +177,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memUsePieBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +196,7 @@
         private System.Windows.Forms.ToolStripMenuItem newProcessToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripTextBox killProcessTextBox;
+        private System.Windows.Forms.PictureBox memUsePieBox;
     }
 }
 

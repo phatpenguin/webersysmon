@@ -177,5 +177,27 @@ namespace TaskManagerProj
                 KillPid(killProcessTextBox.Text);
             }
         }
+
+        private void memUsePieBox_Paint(object sender, PaintEventArgs e)
+        {
+            Pen p = new Pen(Color.Black, 2);
+            Graphics g = e.Graphics;
+            Rectangle rec = new Rectangle(0, 0, memUsePieBox.Width, memUsePieBox.Height);
+
+            Brush b1 = new SolidBrush(Color.Red);
+            Brush b2 = new SolidBrush(Color.Blue);
+            Brush b3 = new SolidBrush(Color.Black);
+            Brush b4 = new SolidBrush(Color.BlueViolet);
+
+            g.Clear(Form1.DefaultBackColor);
+            g.DrawPie(p, rec, 0, 90);
+            g.FillPie(b1, rec, 0, 90);
+            g.DrawPie(p, rec, 90, 90);
+            g.FillPie(b2, rec, 90, 90);
+            g.DrawPie(p, rec, 180, 90);
+            g.FillPie(b3, rec, 180, 90);
+            g.DrawPie(p, rec, 270, 90);
+            g.FillPie(b4, rec, 270, 90);
+        }
     }
 }
