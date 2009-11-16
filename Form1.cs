@@ -21,6 +21,8 @@ namespace TaskManagerProj
 
         Thread n1;
 
+        private int totalMemoryUsage = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -89,6 +91,7 @@ namespace TaskManagerProj
                         List.SubItems.Add(Proc1.ThreadCount); // add thread count
                         List.SubItems.Add(Proc1.Thread_Priority.ToString());
 
+                        totalMemoryUsage += (int)(p1.WorkingSet64 / 1000);
                         totalRunningProcesses++; // add up all the processes
                         totalThreadCount += p1.Threads.Count; // add up all the threads from each process
 
@@ -100,6 +103,7 @@ namespace TaskManagerProj
                     {
                         listView1.Items[(listView1.Items.Count - 1)].Selected = true;
                     }
+                    memUsePieBox.Invalidate();
                 }
             }
             // Display the total number of Processes currently running.
@@ -209,24 +213,41 @@ namespace TaskManagerProj
 
         private void memUsePieBox_Paint(object sender, PaintEventArgs e)
         {
-            Pen p = new Pen(Color.Black, 2);
-            Graphics g = e.Graphics;
-            Rectangle rec = new Rectangle(0, 0, memUsePieBox.Width, memUsePieBox.Height);
+            if (listView1.Items.Count > 0)
+            {
+                Pen p = new Pen(Color.Black, 2);
+                Graphics g = e.Graphics;
+                Rectangle rec = new Rectangle(0, 0, memUsePieBox.Width, memUsePieBox.Height);
+                int startAngle = 0, red, green, blue, pctDegrees, memUsagePct;
 
-            Brush b1 = new SolidBrush(Color.Red);
-            Brush b2 = new SolidBrush(Color.Blue);
-            Brush b3 = new SolidBrush(Color.Black);
-            Brush b4 = new SolidBrush(Color.BlueViolet);
+                Color[] c = new Color[listView1.Items.Count];
+                Brush[] b = new Brush[listView1.Items.Count];
 
-            g.Clear(Form1.DefaultBackColor);
-            g.DrawPie(p, rec, 0, 90);
-            g.FillPie(b1, rec, 0, 90);
-            g.DrawPie(p, rec, 90, 90);
-            g.FillPie(b2, rec, 90, 90);
-            g.DrawPie(p, rec, 180, 90);
-            g.FillPie(b3, rec, 180, 90);
-            g.DrawPie(p, rec, 270, 90);
-            g.FillPie(b4, rec, 270, 90);
+                Random r = new Random();
+
+                g.Clear(Form1.DefaultBackColor);
+
+                for (int x = 0; x < listView1.Items.Count; x++)
+                {
+                    red = r.Next(255);
+                    blue = r.Next(255);
+                    green = r.Next(255);
+
+                    c[x] = Color.FromArgb(red, blue, green);
+                    b[x] = new SolidBrush(c[x]);
+
+                    String memUsage1 = System.Text.RegularExpressions.Regex.Replace(listView1.Items[x].SubItems[2].Text,",","");
+                    memUsage1 = System.Text.RegularExpressions.Regex.Replace(memUsage1,"K","");
+
+                    memUsagePct = (int)((Convert.ToInt32(memUsage1)*1000) / totalMemoryUsage);
+                    pctDegrees = (int)(360 * memUsagePct);
+
+                    g.DrawPie(p, rec, startAngle, pctDegrees);
+                    g.FillPie(b[x], rec, startAngle, pctDegrees);
+
+                    startAngle += pctDegrees;
+                }
+            }
         }
     }
 }
