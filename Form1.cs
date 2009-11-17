@@ -107,10 +107,10 @@ namespace TaskManagerProj
                 }
             }
             // Display the total number of Processes currently running.
-            //processLabel.Text = "Process: " + totalRunningProcesses.ToString();
+            processLabel.Text = "Process: " + totalRunningProcesses.ToString();
 
             // Display the total number of threads
-            //threadLabel.Text = "Threads: " + totalThreadCount.ToString();
+            threadLabel.Text = "Threads: " + totalThreadCount.ToString();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
