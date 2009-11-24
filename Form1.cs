@@ -55,12 +55,21 @@ namespace TaskManagerProj
 
             Process[] templist = Process.GetProcesses();
 
-            //Create items in list view
+            //Store selected PID to keep selection through refresh
             String selectedPid = "";
             if (listView1.SelectedItems.Count >= 1)
             selectedPid = listView1.SelectedItems[0].Text;
             listView1.Items.Clear();
-
+            if (listView1.Items.Count > 0)
+            {
+                for (int x = 0; x < listView1.Items.Count - 1; x++)
+                {
+                    foreach (Process p0 in templist)
+                        if (p0.Id.ToString().Equals(listView1.SelectedItems[x].Text))
+                        {
+                        }
+                }
+            }
             foreach (Process p1 in templist)
             {
                 if (p1.ProcessName != "TaskManagerProj.vshost")

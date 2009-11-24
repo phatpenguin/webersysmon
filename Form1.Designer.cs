@@ -57,7 +57,7 @@
             this.listView1.Location = new System.Drawing.Point(0, 27);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(525, 465);
+            this.listView1.Size = new System.Drawing.Size(610, 465);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -66,7 +66,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(638, 498);
+            this.button1.Location = new System.Drawing.Point(723, 498);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.fToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fToolStripMenuItem.Name = "fToolStripMenuItem";
-            this.fToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fToolStripMenuItem.Text = "File";
             this.fToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
@@ -100,7 +100,7 @@
             this.exitToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -113,7 +113,7 @@
             this.processToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(759, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(844, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +123,7 @@
             this.killSelectedToolStripMenuItem,
             this.newProcessToolStripMenuItem});
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
-            this.processToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.processToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.processToolStripMenuItem.Text = "Process";
             // 
             // killSelectedToolStripMenuItem
@@ -131,13 +131,13 @@
             this.killSelectedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.killProcessTextBox});
             this.killSelectedToolStripMenuItem.Name = "killSelectedToolStripMenuItem";
-            this.killSelectedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.killSelectedToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.killSelectedToolStripMenuItem.Text = "Kill Process";
             // 
             // killProcessTextBox
             // 
             this.killProcessTextBox.Name = "killProcessTextBox";
-            this.killProcessTextBox.Size = new System.Drawing.Size(100, 23);
+            this.killProcessTextBox.Size = new System.Drawing.Size(100, 21);
             this.killProcessTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterKeyPress);
             // 
             // newProcessToolStripMenuItem
@@ -145,18 +145,18 @@
             this.newProcessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.newProcessToolStripMenuItem.Name = "newProcessToolStripMenuItem";
-            this.newProcessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newProcessToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newProcessToolStripMenuItem.Text = "New Process";
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 21);
             // 
             // memUsePieBox
             // 
             this.memUsePieBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.memUsePieBox.Location = new System.Drawing.Point(532, 27);
+            this.memUsePieBox.Location = new System.Drawing.Point(617, 27);
             this.memUsePieBox.Name = "memUsePieBox";
             this.memUsePieBox.Size = new System.Drawing.Size(225, 225);
             this.memUsePieBox.TabIndex = 4;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 521);
+            this.ClientSize = new System.Drawing.Size(844, 521);
             this.Controls.Add(this.threadLabel);
             this.Controls.Add(this.processLabel);
             this.Controls.Add(this.memUsePieBox);
