@@ -23,6 +23,8 @@ namespace TaskManagerProj
 
         private int totalMemoryUsage = 0;
 
+        private bool onceFilled = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -52,22 +54,39 @@ namespace TaskManagerProj
 
             // variable used to add-up all Thread count
             int totalThreadCount = 0;
+            bool idExists = false;
 
             Process[] templist = Process.GetProcesses();
 
             //Store selected PID to keep selection through refresh
             String selectedPid = "";
             if (listView1.SelectedItems.Count >= 1)
-            selectedPid = listView1.SelectedItems[0].Text;
-            listView1.Items.Clear();
+            {
+                selectedPid = listView1.SelectedItems[0].Text;
+            }
+
+            int totalItems = listView1.Items.Count - 1;
+
             if (listView1.Items.Count > 0)
             {
-                for (int x = 0; x < listView1.Items.Count - 1; x++)
+                for (int x = 0; x < totalItems; x++)
                 {
                     foreach (Process p0 in templist)
-                        if (p0.Id.ToString().Equals(listView1.SelectedItems[x].Text))
+                    {
+                        if (p0.Id.ToString().Equals(listView1.Items[x].Text))
                         {
+                            idExists = true;
+                            break;
                         }
+                    }
+                    if (idExists == false)
+                    {
+                        listView1.Items[x].Remove();
+                    }
+                    else
+                    {
+                        idExists = false;
+                    }
                 }
             }
             foreach (Process p1 in templist)
@@ -104,7 +123,26 @@ namespace TaskManagerProj
                         totalRunningProcesses++; // add up all the processes
                         totalThreadCount += p1.Threads.Count; // add up all the threads from each process
 
-                        listView1.Items.Add(List);
+                        if (onceFilled)
+                        {
+                            for (int x = 0; x < totalItems; x++)
+                            {
+                                if (p1.Id.ToString().Equals(listView1.Items[x].Text))
+                                {
+                                    listView1.Items[x].Remove();
+                                    listView1.Items.Add(List);
+                                }
+                                else
+                                {
+                                    listView1.Items.Add(List);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            listView1.Items.Add(List);
+                        }
+                        
                     }
                     catch { }
 
@@ -115,6 +153,7 @@ namespace TaskManagerProj
                     memUsePieBox.Invalidate();
                 }
             }
+            onceFilled = true;
             // Display the total number of Processes currently running.
             processLabel.Text = "Process: " + totalRunningProcesses.ToString();
 
