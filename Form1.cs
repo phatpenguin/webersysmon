@@ -58,13 +58,6 @@ namespace TaskManagerProj
 
             Process[] templist = Process.GetProcesses();
 
-            //Store selected PID to keep selection through refresh
-            String selectedPid = "";
-            if (listView1.SelectedItems.Count >= 1)
-            {
-                selectedPid = listView1.SelectedItems[0].Text;
-            }
-
             int totalItems = listView1.Items.Count - 1;
 
             if (listView1.Items.Count > 0)
@@ -129,13 +122,23 @@ namespace TaskManagerProj
                             {
                                 if (p1.Id.ToString().Equals(listView1.Items[x].Text))
                                 {
-                                    listView1.Items[x].Remove();
-                                    listView1.Items.Add(List);
+                                    listView1.Items[x].SubItems[1].Text = List.SubItems[1].Text;
+                                    listView1.Items[x].SubItems[2].Text = List.SubItems[2].Text;
+                                    listView1.Items[x].SubItems[3].Text = List.SubItems[3].Text;
+                                    listView1.Items[x].SubItems[4].Text = List.SubItems[4].Text;
+                                    listView1.Items[x].SubItems[5].Text = List.SubItems[5].Text;
+                                    listView1.Items[x].SubItems[6].Text = List.SubItems[6].Text;
+                                    idExists = true;
+                                    break;
                                 }
-                                else
-                                {
-                                    listView1.Items.Add(List);
-                                }
+                            }
+                            if (!idExists)
+                            {
+                                listView1.Items.Add(List);
+                            }
+                            else
+                            {
+                                idExists = false;
                             }
                         }
                         else
@@ -146,11 +149,7 @@ namespace TaskManagerProj
                     }
                     catch { }
 
-                    if (!selectedPid.Equals("") && p1.Id.ToString().Equals(selectedPid))
-                    {
-                        listView1.Items[(listView1.Items.Count - 1)].Selected = true;
-                    }
-                    memUsePieBox.Invalidate();
+                    //memUsePieBox.Invalidate();
                 }
             }
             onceFilled = true;
@@ -251,15 +250,26 @@ namespace TaskManagerProj
             }
         }
 
-        private void EnterKeyPress(object sender, KeyEventArgs e)
+        private void KillEnterKeyPress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 KillPid(killProcessTextBox.Text);
+                killProcessTextBox.Text = "";
             }
         }
 
-        private void memUsePieBox_Paint(object sender, PaintEventArgs e)
+        private void RunEnterKeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Process.Start(runProcessTextBox.Text);
+                runProcessTextBox.Text = "";
+            }
+        }
+
+
+        /*private void memUsePieBox_Paint(object sender, PaintEventArgs e)
         {
             if (listView1.Items.Count > 0)
             {
@@ -288,7 +298,7 @@ namespace TaskManagerProj
                     memUsage1 = System.Text.RegularExpressions.Regex.Replace(memUsage1,"K","");
 
                     memUsagePct = (int)((Convert.ToInt32(memUsage1)*1000) / totalMemoryUsage);
-                    pctDegrees = (int)(360 * memUsagePct);
+                    pctDegrees = (int)(360 * memUsagePct / 100);
 
                     g.DrawPie(p, rec, startAngle, pctDegrees);
                     g.FillPie(b[x], rec, startAngle, pctDegrees);
@@ -296,6 +306,6 @@ namespace TaskManagerProj
                     startAngle += pctDegrees;
                 }
             }
-        }
+        }*/
     }
 }
